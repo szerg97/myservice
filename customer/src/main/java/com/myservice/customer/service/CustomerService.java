@@ -6,6 +6,8 @@ import com.myservice.customer.model.CustomerRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class CustomerService {
@@ -19,5 +21,9 @@ public class CustomerService {
                 .build();
 
         customerRepository.save((customer));
+    }
+
+    public List<Customer> getAll() {
+        return customerRepository.findAll();
     }
 }
